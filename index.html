@@ -4,319 +4,344 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Reyvern Mahinay — IT Support Professional</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0a0a0f;
-    --bg2: #111118;
-    --bg3: #1a1a24;
+    --bg: #0c0c0c;
+    --bg2: #111111;
+    --card: #161616;
+    --border: #222222;
     --accent: #00e5ff;
-    --accent2: #7c3aed;
-    --text: #e8e8f0;
-    --muted: #b0b0c8;
-    --border: #2a2a38;
-    --card: #13131e;
+    --text: #e0e0e0;
+    --muted: #888888;
+    --dim: #555555;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
 
   body {
     background: var(--bg);
     color: var(--text);
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 1.7;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.75;
     overflow-x: hidden;
   }
 
-  /* ── NOISE OVERLAY ── */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 999;
-    opacity: 0.4;
-  }
-
-  /* ── GRID BACKGROUND ── */
-  body::after {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(0,229,255,0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0,229,255,0.03) 1px, transparent 1px);
-    background-size: 60px 60px;
-    pointer-events: none;
-    z-index: 0;
-  }
+  /* ── SCROLLBAR ── */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--border); }
 
   /* ── NAV ── */
   nav {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    top: 0; left: 0; right: 0;
     z-index: 100;
-    padding: 1.2rem 3rem;
+    padding: 1.25rem 4rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(10,10,15,0.85);
-    backdrop-filter: blur(20px);
+    background: rgba(12,12,12,0.92);
+    backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--border);
   }
 
   .nav-logo {
-    font-family: 'Syne', sans-serif;
-    font-weight: 800;
-    font-size: 1.1rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.4rem;
     color: var(--accent);
-    letter-spacing: -0.02em;
     text-decoration: none;
+    letter-spacing: 0.12em;
   }
 
   .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: 2.5rem;
     list-style: none;
   }
 
   .nav-links a {
-    font-family: 'DM Mono', monospace;
-    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 0.78rem;
     color: var(--muted);
     text-decoration: none;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
     transition: color 0.2s;
   }
 
-  .nav-links a:hover { color: var(--accent); }
+  .nav-links a:hover { color: var(--text); }
 
   /* ── SECTIONS ── */
-  section { position: relative; z-index: 1; }
+  section { position: relative; }
 
   /* ── HERO ── */
   #hero {
     min-height: 100vh;
     display: flex;
-    align-items: center;
-    padding: 8rem 3rem 4rem;
+    align-items: flex-end;
+    padding: 0 4rem 6rem;
     max-width: 1200px;
     margin: 0 auto;
   }
 
-  .hero-inner {
-    max-width: 800px;
-  }
+  .hero-inner { width: 100%; }
 
-  .hero-tag {
-    font-family: 'DM Mono', monospace;
-    font-size: 1rem;
-    color: var(--accent);
-    letter-spacing: 0.2em;
+  .hero-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.25em;
     text-transform: uppercase;
+    color: var(--accent);
     margin-bottom: 1.5rem;
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 1rem;
   }
 
-  .hero-tag::before {
+  .hero-eyebrow::before {
     content: '';
-    display: inline-block;
-    width: 2rem;
+    width: 2.5rem;
     height: 1px;
     background: var(--accent);
+    flex-shrink: 0;
   }
 
   h1 {
-    font-family: 'Syne', sans-serif;
-    font-weight: 800;
-    font-size: clamp(3rem, 8vw, 6rem);
-    line-height: 0.95;
-    letter-spacing: -0.03em;
-    margin-bottom: 1.5rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(5rem, 14vw, 11rem);
+    line-height: 0.88;
+    letter-spacing: 0.02em;
+    margin-bottom: 2.5rem;
   }
 
-  h1 .line2 {
+  h1 .outline {
     color: transparent;
-    -webkit-text-stroke: 1px var(--accent);
+    -webkit-text-stroke: 1px rgba(224,224,224,0.25);
+  }
+
+  .hero-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 2rem;
+    flex-wrap: wrap;
   }
 
   .hero-desc {
-    font-size: 1.35rem;
+    font-size: 1rem;
     color: var(--muted);
-    max-width: 520px;
-    margin-bottom: 2.5rem;
+    max-width: 440px;
     line-height: 1.8;
+    font-weight: 300;
   }
 
   .hero-actions {
     display: flex;
     gap: 1rem;
+    flex-shrink: 0;
     flex-wrap: wrap;
   }
 
   .btn {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.92rem;
-    letter-spacing: 0.08em;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-    padding: 0.85rem 1.8rem;
-    border-radius: 2px;
+    padding: 0.8rem 1.6rem;
     text-decoration: none;
     transition: all 0.2s;
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.4rem;
+    white-space: nowrap;
   }
 
   .btn-primary {
     background: var(--accent);
     color: #000;
-    font-weight: 500;
   }
-
-  .btn-primary:hover {
-    background: #fff;
-    transform: translateY(-2px);
-  }
+  .btn-primary:hover { background: #fff; }
 
   .btn-ghost {
     border: 1px solid var(--border);
-    color: var(--text);
+    color: var(--muted);
   }
+  .btn-ghost:hover { border-color: var(--dim); color: var(--text); }
 
-  .btn-ghost:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-    transform: translateY(-2px);
-  }
-
-  .hero-stats {
-    margin-top: 4rem;
-    display: flex;
-    gap: 3rem;
-    padding-top: 2rem;
+  /* ── STATS BAR ── */
+  .stats-bar {
     border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    background: var(--bg2);
   }
+
+  .stat-item {
+    flex: 1;
+    padding: 2rem 4rem;
+    border-right: 1px solid var(--border);
+  }
+  .stat-item:last-child { border-right: none; }
 
   .stat-num {
-    font-family: 'Syne', sans-serif;
-    font-size: 2rem;
-    font-weight: 800;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.8rem;
     color: var(--accent);
+    letter-spacing: 0.04em;
     line-height: 1;
   }
 
   .stat-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 1rem;
-    color: var(--muted);
-    letter-spacing: 0.1em;
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    margin-top: 0.3rem;
+    color: var(--muted);
+    margin-top: 0.4rem;
+  }
+
+  /* ── SECTION HEADER ── */
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .section-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    color: var(--dim);
+  }
+
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    letter-spacing: 0.06em;
+    color: var(--text);
+    line-height: 1;
+  }
+
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
   }
 
   /* ── ABOUT ── */
   #about {
-    padding: 6rem 3rem;
+    padding: 7rem 4rem;
     max-width: 1200px;
     margin: 0 auto;
   }
 
-  .section-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 1rem;
-    color: var(--accent);
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    margin-bottom: 3rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .section-label::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--border);
-    max-width: 200px;
-  }
-
   .about-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 6rem;
     align-items: start;
   }
 
   .about-text h2 {
-    font-family: 'Syne', sans-serif;
-    font-size: 2.2rem;
-    font-weight: 700;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 0.04em;
     line-height: 1.2;
     margin-bottom: 1.5rem;
-    letter-spacing: -0.02em;
+    color: var(--text);
   }
 
   .about-text p {
     color: var(--muted);
-    margin-bottom: 1rem;
-    font-size: 1.05rem;
+    font-size: 0.95rem;
+    margin-bottom: 1.1rem;
+    font-weight: 300;
   }
 
   .info-list {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0;
   }
 
   .info-list li {
-    display: flex;
-    gap: 1rem;
-    align-items: flex-start;
-    padding: 1rem;
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 4px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.25rem;
+    align-items: start;
+    padding: 1.1rem 0;
+    border-bottom: 1px solid var(--border);
   }
+  .info-list li:first-child { border-top: 1px solid var(--border); }
 
   .info-icon {
-    font-size: 1rem;
-    margin-top: 0.1rem;
-    flex-shrink: 0;
+    font-size: 0.9rem;
+    margin-top: 0.15rem;
+    opacity: 0.5;
   }
 
   .info-key {
-    font-family: 'DM Mono', monospace;
-    font-size: 1rem;
-    color: var(--muted);
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    color: var(--dim);
     margin-bottom: 0.2rem;
   }
 
   .info-val {
-    font-size: 1rem;
+    font-size: 0.88rem;
     color: var(--text);
+    font-weight: 300;
+  }
+
+  /* hobbies */
+  .hobbies-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    margin-top: 4rem;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .hobby-card {
+    background: var(--card);
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .hobby-icon { font-size: 1.5rem; }
+
+  .hobby-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.1em;
+    color: var(--text);
+  }
+
+  .hobby-desc {
+    font-size: 0.84rem;
+    color: var(--muted);
+    line-height: 1.7;
+    font-weight: 300;
   }
 
   /* ── EXPERIENCE ── */
   #experience {
-    padding: 6rem 3rem;
     background: var(--bg2);
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
+    padding: 7rem 4rem;
   }
 
   .exp-inner { max-width: 1200px; margin: 0 auto; }
@@ -324,105 +349,84 @@
   .timeline {
     display: flex;
     flex-direction: column;
-    gap: 0;
-    position: relative;
-  }
-
-  .timeline::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 1px;
-    background: linear-gradient(to bottom, var(--accent), var(--accent2), transparent);
   }
 
   .timeline-item {
-    padding: 2rem 0 2rem 2.5rem;
-    position: relative;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 3rem;
+    padding: 2.5rem 0;
     border-bottom: 1px solid var(--border);
-    transition: background 0.2s;
+    position: relative;
   }
+  .timeline-item:first-child { border-top: 1px solid var(--border); }
 
-  .timeline-item:last-child { border-bottom: none; }
-
-  .timeline-item::before {
-    content: '';
-    position: absolute;
-    left: -4px;
-    top: 2.4rem;
-    width: 9px;
-    height: 9px;
-    background: var(--accent);
-    border-radius: 50%;
-    box-shadow: 0 0 12px var(--accent);
-  }
-
-  .timeline-meta {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 0.5rem;
-    flex-wrap: wrap;
-  }
+  .timeline-left { padding-top: 0.2rem; }
 
   .timeline-date {
-    font-family: 'DM Mono', monospace;
-    font-size: 1rem;
-    color: var(--accent);
-    letter-spacing: 0.1em;
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
   }
 
   .timeline-badge {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.78rem;
-    padding: 0.2rem 0.6rem;
-    border-radius: 2px;
-    background: rgba(124,58,237,0.15);
-    color: #a78bfa;
-    border: 1px solid rgba(124,58,237,0.3);
-    letter-spacing: 0.08em;
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    margin-top: 0.4rem;
   }
 
   .timeline-title {
-    font-family: 'Syne', sans-serif;
-    font-size: 1.35rem;
-    font-weight: 700;
-    margin-bottom: 0.25rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.3rem;
+    color: var(--text);
   }
 
   .timeline-company {
-    font-size: 1rem;
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
     color: var(--muted);
-    margin-bottom: 1rem;
+    text-transform: uppercase;
+    margin-bottom: 1.2rem;
   }
 
   .timeline-bullets {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 0.4rem;
+    gap: 0.5rem;
   }
 
   .timeline-bullets li {
-    font-size: 1rem;
+    font-size: 0.88rem;
     color: var(--muted);
-    padding-left: 1rem;
+    font-weight: 300;
+    padding-left: 1.1rem;
     position: relative;
+    line-height: 1.6;
   }
 
   .timeline-bullets li::before {
     content: '—';
     position: absolute;
     left: 0;
-    color: var(--border);
+    color: var(--dim);
+    font-size: 0.75rem;
   }
 
   /* ── SKILLS ── */
   #skills {
-    padding: 6rem 3rem;
+    padding: 7rem 4rem;
     max-width: 1200px;
     margin: 0 auto;
   }
@@ -430,57 +434,49 @@
   .skills-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
   }
 
   .skill-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 1.8rem;
-    transition: border-color 0.2s, transform 0.2s;
+    background: var(--bg);
+    padding: 2rem;
+    transition: background 0.2s;
   }
-
-  .skill-card:hover {
-    border-color: var(--accent);
-    transform: translateY(-3px);
-  }
-
-  .skill-card-icon {
-    font-size: 2rem;
-    margin-bottom: 0.75rem;
-  }
+  .skill-card:hover { background: var(--card); }
 
   .skill-card-title {
-    font-family: 'Syne', sans-serif;
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin-bottom: 0.75rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.15rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 1.25rem;
     color: var(--text);
   }
 
   .skill-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.4rem;
+    gap: 0.35rem;
   }
 
   .tag {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.92rem;
-    padding: 0.3rem 0.65rem;
-    background: var(--bg3);
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    padding: 0.3rem 0.6rem;
     border: 1px solid var(--border);
-    border-radius: 2px;
-    color: var(--muted);
-    letter-spacing: 0.05em;
+    color: var(--dim);
+    transition: color 0.2s, border-color 0.2s;
   }
+
+  .skill-card:hover .tag { color: var(--muted); border-color: var(--dim); }
 
   /* ── CONTACT ── */
   #contact {
-    padding: 6rem 3rem;
     background: var(--bg2);
     border-top: 1px solid var(--border);
+    padding: 7rem 4rem;
   }
 
   .contact-inner {
@@ -488,138 +484,153 @@
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
+    gap: 6rem;
+    align-items: start;
   }
-
-  .contact-text h2 {
-    font-family: 'Syne', sans-serif;
-    font-size: 2.5rem;
-    font-weight: 800;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    margin-bottom: 1rem;
-  }
-
-  .contact-text p {
-    color: var(--muted);
-    font-size: 1.05rem;
-    margin-bottom: 2rem;
-  }
-
-  .contact-links {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .contact-link {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1.1rem 1.5rem;
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    text-decoration: none;
-    color: var(--text);
-    transition: all 0.2s;
-  }
-
-  .contact-link:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-    transform: translateX(4px);
-  }
-
-  .contact-link-icon { font-size: 1.1rem; }
-
-  .contact-link-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 1rem;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-  }
-
-  .contact-link-val { font-size: 0.9rem; }
 
   .avail-badge {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    background: rgba(0,229,255,0.08);
-    border: 1px solid rgba(0,229,255,0.2);
-    border-radius: 2px;
-    font-family: 'DM Mono', monospace;
-    font-size: 1rem;
-    color: var(--accent);
-    letter-spacing: 0.1em;
+    padding: 0.4rem 0.9rem;
+    border: 1px solid rgba(0,229,255,0.25);
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
+    color: var(--accent);
     margin-bottom: 1.5rem;
   }
 
   .avail-dot {
-    width: 6px;
-    height: 6px;
+    width: 5px;
+    height: 5px;
     background: var(--accent);
     border-radius: 50%;
     animation: pulse 2s infinite;
   }
 
   @keyframes pulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.4; transform: scale(0.8); }
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  .contact-text h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.5rem;
+    letter-spacing: 0.04em;
+    line-height: 1;
+    margin-bottom: 1.25rem;
+    color: var(--text);
+  }
+
+  .contact-text p {
+    color: var(--muted);
+    font-size: 0.92rem;
+    font-weight: 300;
+    margin-bottom: 2.5rem;
+    max-width: 380px;
+    line-height: 1.8;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--border);
+    text-decoration: none;
+    color: var(--text);
+    transition: padding-left 0.2s;
+  }
+
+  a.contact-link:hover { padding-left: 0.5rem; }
+
+  .contact-link-icon {
+    font-size: 0.9rem;
+    width: 1.5rem;
+    text-align: center;
+    opacity: 0.4;
+    flex-shrink: 0;
+  }
+
+  .contact-link-label {
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.15rem;
+  }
+
+  .contact-link-val {
+    font-size: 0.88rem;
+    font-weight: 300;
+    color: var(--text);
   }
 
   /* ── FOOTER ── */
   footer {
-    padding: 2rem 3rem;
+    padding: 1.75rem 4rem;
     border-top: 1px solid var(--border);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
-    z-index: 1;
   }
 
   footer p {
-    font-family: 'DM Mono', monospace;
-    font-size: 1rem;
-    color: var(--muted);
-    letter-spacing: 0.08em;
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    color: var(--dim);
+    text-transform: uppercase;
   }
 
   /* ── FADE IN ── */
   .fade-in {
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transform: translateY(16px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
   }
-
-  .fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
 
   /* ── RESPONSIVE ── */
-  @media (max-width: 768px) {
-    nav { padding: 1rem 1.5rem; }
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.75rem; }
     .nav-links { display: none; }
-    #hero { padding: 7rem 1.5rem 3rem; }
-    .hero-stats { gap: 1.5rem; }
-    .about-grid, .contact-inner { grid-template-columns: 1fr; gap: 2rem; }
-    .skills-grid { grid-template-columns: 1fr 1fr; }
-    #about, #skills, #experience, #contact { padding: 4rem 1.5rem; }
-    footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+    #hero { padding: 0 1.75rem 4rem; min-height: 100svh; }
+    .hero-bottom { flex-direction: column; align-items: flex-start; }
+    h1 { font-size: clamp(4rem, 16vw, 7rem); }
+    .stats-bar { flex-direction: column; }
+    .stat-item { border-right: none; border-bottom: 1px solid var(--border); padding: 1.5rem 1.75rem; }
+    .stat-item:last-child { border-bottom: none; }
+    #about, #skills, #contact { padding: 4.5rem 1.75rem; }
+    #experience { padding: 4.5rem 1.75rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .hobbies-row { grid-template-columns: 1fr; }
+    .timeline-item { grid-template-columns: 1fr; gap: 0.75rem; padding: 2rem 0; }
+    .timeline-left { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+    .skills-grid { grid-template-columns: repeat(2, 1fr); }
+    .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+    footer { padding: 1.5rem 1.75rem; flex-direction: column; gap: 0.4rem; text-align: center; }
+  }
+
+  @media (max-width: 480px) {
+    .skills-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
 <body>
 
 <nav>
-  <a href="#hero" class="nav-logo">RM.</a>
+  <a href="#hero" class="nav-logo">RM</a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#experience">Experience</a></li>
@@ -632,45 +643,68 @@
 <div style="max-width:1200px;margin:0 auto;">
   <section id="hero">
     <div class="hero-inner">
-      <div class="hero-tag">IT Support Professional</div>
+      <div class="hero-eyebrow">IT Support Professional</div>
       <h1>
         Reyvern<br>
-        <span class="line2">Mahinay</span>
+        <span class="outline">Mahinay</span>
       </h1>
-      <p class="hero-desc">
-        5+ years delivering remote and onsite IT support across diverse industries. Specialising in helpdesk operations, endpoint management, and network infrastructure.
-      </p>
-      <div class="hero-actions">
-        <a href="mailto:reyvern.mahinay@outlook.com" class="btn btn-primary">Get in touch →</a>
-        <a href="#experience" class="btn btn-ghost">View experience</a>
-      </div>
-      <div class="hero-stats">
-        <div>
-          <div class="stat-num">5+</div>
-          <div class="stat-label">Years experience</div>
-        </div>
-        <div>
-          <div class="stat-num">300+</div>
-          <div class="stat-label">Workstations deployed</div>
-        </div>
-        <div>
-          <div class="stat-num">3</div>
-          <div class="stat-label">Industries supported</div>
+      <div class="hero-bottom">
+        <p class="hero-desc">
+          5+ years delivering onsite IT support across diverse industries. Specialising in helpdesk operations, endpoint management, and network infrastructure.
+        </p>
+        <div class="hero-actions">
+          <a href="mailto:reyvern.mahinay@outlook.com" class="btn btn-primary">Get in touch →</a>
+          <a href="#experience" class="btn btn-ghost">View experience</a>
         </div>
       </div>
     </div>
   </section>
 </div>
 
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat-item fade-in">
+    <div class="stat-num">5+</div>
+    <div class="stat-label">Years Experience</div>
+  </div>
+  <div class="stat-item fade-in">
+    <div class="stat-num">300+</div>
+    <div class="stat-label">Workstations Deployed</div>
+  </div>
+  <div class="stat-item fade-in">
+    <div class="stat-num">3</div>
+    <div class="stat-label">Industries Supported</div>
+  </div>
+</div>
+
 <!-- ABOUT -->
 <section id="about">
-  <div class="section-label">About me</div>
+  <div class="section-header fade-in">
+    <span class="section-num">01</span>
+    <span class="section-title">About</span>
+    <span class="section-line"></span>
+  </div>
+
   <div class="about-grid fade-in">
     <div class="about-text">
       <h2>Reliable IT support, wherever the work happens.</h2>
       <p>I am an IT Support Professional based in Bacolod City, Philippines with over five years of hands-on experience in Tier 1 and Tier 2 helpdesk, endpoint management, and network infrastructure across BPO, real estate, and customer service environments.</p>
       <p>I work well independently, document everything properly, and communicate clearly with both technical and non-technical stakeholders. I am looking for a full-time remote role where I can contribute from day one and grow long term.</p>
+
+      <div class="hobbies-row" style="margin-top:2.5rem;">
+        <div class="hobby-card">
+          <div class="hobby-icon">🎹</div>
+          <div class="hobby-title">Music Production</div>
+          <div class="hobby-desc">I produce tracks using Ableton Live, experimenting with different genres and sounds. I also play musical instruments — a lot of my free time goes into writing, arranging, and making something from scratch.</div>
+        </div>
+        <div class="hobby-card">
+          <div class="hobby-icon">🎮</div>
+          <div class="hobby-title">Gaming</div>
+          <div class="hobby-desc">When not troubleshooting IT issues, you'll find me deep in an NBA 2K session. Building a team and grinding through modes scratches the same problem-solving itch as IT work.</div>
+        </div>
+      </div>
     </div>
+
     <ul class="info-list">
       <li>
         <span class="info-icon">📍</span>
@@ -690,7 +724,7 @@
         <span class="info-icon">📞</span>
         <div>
           <div class="info-key">Phone</div>
-          <div class="info-val">+639939634468</div>
+          <div class="info-val">+63 993 963 4468</div>
         </div>
       </li>
       <li>
@@ -703,97 +737,102 @@
       <li>
         <span class="info-icon">🌐</span>
         <div>
-          <div class="info-key">Connection</div>
-          <div class="info-val">Fibre broadband with mobile hotspot backup</div>
+          <div class="info-key">LinkedIn</div>
+          <div class="info-val">linkedin.com/in/reyvern-mahinay-6208a43b6</div>
+        </div>
+      </li>
+      <li>
+        <span class="info-icon">🕐</span>
+        <div>
+          <div class="info-key">Timezone</div>
+          <div class="info-val">PHT (UTC+8) — Flexible</div>
+        </div>
+      </li>
+      <li>
+        <span class="info-icon">💻</span>
+        <div>
+          <div class="info-key">Work Setup</div>
+          <div class="info-val">Dedicated home office, fibre broadband with mobile hotspot backup</div>
         </div>
       </li>
     </ul>
-  </div>
-
-  <!-- HOBBIES -->
-  <div style="margin-top: 3rem;" class="fade-in">
-    <p style="font-size: 0.88rem; font-family: 'DM Mono', monospace; color: var(--accent); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.75rem;">Outside of work</p>
-    <p style="font-size: 0.95rem; color: var(--muted); margin-bottom: 1.25rem;">When I am not in front of a helpdesk ticket, these are the things I enjoy. Feel free to hit me up if any of these are your thing too.</p>
-    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-      <div style="display: flex; align-items: flex-start; gap: 1rem; padding: 1.5rem; background: var(--card); border: 1px solid var(--border); border-radius: 4px; flex: 1; min-width: 220px;">
-        <span style="font-size: 1.8rem; margin-top: 0.2rem;">🎹</span>
-        <div>
-          <div style="font-size: 1rem; font-weight: 600; color: var(--text); margin-bottom: 0.4rem;">Music Production</div>
-          <div style="font-size: 0.88rem; color: var(--muted); line-height: 1.6;">Music is a big part of who I am outside of work. I produce tracks using Ableton Live, experimenting with different genres and sounds. I also play musical instruments, so a lot of my free time goes into writing, arranging, and just enjoying the process of making something from scratch.</div>
-        </div>
-      </div>
-      <div style="display: flex; align-items: flex-start; gap: 1rem; padding: 1.5rem; background: var(--card); border: 1px solid var(--border); border-radius: 4px; flex: 1; min-width: 220px;">
-        <span style="font-size: 1.8rem; margin-top: 0.2rem;">🎮</span>
-        <div>
-          <div style="font-size: 1rem; font-weight: 600; color: var(--text); margin-bottom: 0.4rem;">Gaming</div>
-          <div style="font-size: 0.88rem; color: var(--muted); line-height: 1.6;">When I am not troubleshooting IT issues, you will probably find me deep in an NBA 2K session. I have been playing the series for years and it is my go-to way to unwind. There is something satisfying about building a team and grinding through the modes that scratches the same problem-solving itch as IT work.</div>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
 <!-- EXPERIENCE -->
 <section id="experience">
   <div class="exp-inner">
-    <div class="section-label">Experience</div>
+    <div class="section-header fade-in">
+      <span class="section-num">02</span>
+      <span class="section-title">Experience</span>
+      <span class="section-line"></span>
+    </div>
+
     <div class="timeline fade-in">
 
       <div class="timeline-item">
-        <div class="timeline-meta">
-          <span class="timeline-date">July 2022 — Present</span>
-          <span class="timeline-badge">Current</span>
+        <div class="timeline-left">
+          <div class="timeline-date">July 2022 — Present</div>
+          <div class="timeline-badge">Current</div>
         </div>
-        <div class="timeline-title">Desktop Support Engineer</div>
-        <div class="timeline-company">Focus Direct Inc. — Bacolod City</div>
-        <ul class="timeline-bullets">
-          <li>Tier 2 helpdesk support for hardware, software, and network issues across a 300+ seat contact center</li>
-          <li>Remote endpoint management via ManageEngine Endpoint Central — patching, deployment, diagnostics</li>
-          <li>Led imaging and deployment of 300+ workstations during a major facility expansion</li>
-          <li>Microsoft 365 administration: user setup, MFA, Exchange Online, Entra ID, license management</li>
-          <li>Helpdesk operations via ManageEngine ServiceDesk — SLA tracking, escalation, documentation</li>
-          <li>Endpoint security management using SentinelOne EDR</li>
-        </ul>
+        <div>
+          <div class="timeline-title">Desktop Support Engineer</div>
+          <div class="timeline-company">Focus Direct Inc. — Bacolod City</div>
+          <ul class="timeline-bullets">
+            <li>Tier 2 helpdesk support for hardware, software, and network issues across a 300+ seat contact center</li>
+            <li>Remote endpoint management via ManageEngine Endpoint Central — patching, deployment, diagnostics</li>
+            <li>Led imaging and deployment of 300+ workstations during a major facility expansion</li>
+            <li>Microsoft 365 administration: user setup, MFA, Exchange Online, Entra ID, license management</li>
+            <li>Helpdesk operations via ManageEngine ServiceDesk — SLA tracking, escalation, documentation</li>
+            <li>Endpoint security management using SentinelOne EDR</li>
+          </ul>
+        </div>
       </div>
 
       <div class="timeline-item">
-        <div class="timeline-meta">
-          <span class="timeline-date">March 2021 — July 2022</span>
+        <div class="timeline-left">
+          <div class="timeline-date">March 2021 — July 2022</div>
         </div>
-        <div class="timeline-title">IT Officer</div>
-        <div class="timeline-company">Del Rio Realty & Development of Bacolod, Inc.</div>
-        <ul class="timeline-bullets">
-          <li>Directed full IT operations across multiple office sites as Level 2 escalation point</li>
-          <li>Managed network infrastructure: PFSense firewall, VPN, DHCP, switches, access points</li>
-          <li>Coordinated ISP provisioning, structured cabling, and CCTV installations</li>
-          <li>Supervised junior IT staff and managed vendor relationships</li>
-          <li>Maintained IT asset inventory, SOPs, and preventive maintenance schedules</li>
-        </ul>
+        <div>
+          <div class="timeline-title">IT Officer</div>
+          <div class="timeline-company">Del Rio Realty & Development of Bacolod, Inc.</div>
+          <ul class="timeline-bullets">
+            <li>Directed full IT operations across multiple office sites as Level 2 escalation point</li>
+            <li>Managed network infrastructure: PFSense firewall, VPN, DHCP, switches, access points</li>
+            <li>Coordinated ISP provisioning, structured cabling, and CCTV installations</li>
+            <li>Supervised junior IT staff and managed vendor relationships</li>
+            <li>Maintained IT asset inventory, SOPs, and preventive maintenance schedules</li>
+          </ul>
+        </div>
       </div>
 
       <div class="timeline-item">
-        <div class="timeline-meta">
-          <span class="timeline-date">March 2020 — March 2021</span>
+        <div class="timeline-left">
+          <div class="timeline-date">March 2020 — March 2021</div>
         </div>
-        <div class="timeline-title">IT Assistant</div>
-        <div class="timeline-company">Del Rio Realty & Development of Bacolod, Inc.</div>
-        <ul class="timeline-bullets">
-          <li>Tier 1 frontline support for hardware, software, and peripheral issues</li>
-          <li>LAN setup, workstation configuration, and IT asset inventory management</li>
-          <li>Data backup procedures and document security</li>
-        </ul>
+        <div>
+          <div class="timeline-title">IT Assistant</div>
+          <div class="timeline-company">Del Rio Realty & Development of Bacolod, Inc.</div>
+          <ul class="timeline-bullets">
+            <li>Tier 1 frontline support for hardware, software, and peripheral issues</li>
+            <li>LAN setup, workstation configuration, and IT asset inventory management</li>
+            <li>Data backup procedures and document security</li>
+          </ul>
+        </div>
       </div>
 
       <div class="timeline-item">
-        <div class="timeline-meta">
-          <span class="timeline-date">July 2019 — November 2019</span>
+        <div class="timeline-left">
+          <div class="timeline-date">July 2019 — November 2019</div>
         </div>
-        <div class="timeline-title">Customer Service Representative</div>
-        <div class="timeline-company">Teleperformance Philippines</div>
-        <ul class="timeline-bullets">
-          <li>Inbound technical support in a high-volume contact center environment</li>
-          <li>Strong phone etiquette, active listening, and customer-first service</li>
-        </ul>
+        <div>
+          <div class="timeline-title">Customer Service Representative</div>
+          <div class="timeline-company">Teleperformance Philippines</div>
+          <ul class="timeline-bullets">
+            <li>Inbound technical support in a high-volume contact center environment</li>
+            <li>Strong phone etiquette, active listening, and customer-first service</li>
+          </ul>
+        </div>
       </div>
 
     </div>
@@ -802,10 +841,14 @@
 
 <!-- SKILLS -->
 <section id="skills">
-  <div class="section-label">Skills</div>
+  <div class="section-header fade-in">
+    <span class="section-num">03</span>
+    <span class="section-title">Skills</span>
+    <span class="section-line"></span>
+  </div>
+
   <div class="skills-grid fade-in">
     <div class="skill-card">
-      <div class="skill-card-icon">🖥️</div>
       <div class="skill-card-title">Endpoint Management</div>
       <div class="skill-tags">
         <span class="tag">ManageEngine Endpoint Central</span>
@@ -817,7 +860,6 @@
       </div>
     </div>
     <div class="skill-card">
-      <div class="skill-card-icon">☁️</div>
       <div class="skill-card-title">Microsoft 365</div>
       <div class="skill-tags">
         <span class="tag">Exchange Online</span>
@@ -830,7 +872,6 @@
       </div>
     </div>
     <div class="skill-card">
-      <div class="skill-card-icon">🌐</div>
       <div class="skill-card-title">Networking</div>
       <div class="skill-tags">
         <span class="tag">TCP/IP</span>
@@ -844,7 +885,6 @@
       </div>
     </div>
     <div class="skill-card">
-      <div class="skill-card-icon">🎫</div>
       <div class="skill-card-title">Helpdesk & ITSM</div>
       <div class="skill-tags">
         <span class="tag">ManageEngine ServiceDesk</span>
@@ -855,7 +895,6 @@
       </div>
     </div>
     <div class="skill-card">
-      <div class="skill-card-icon">🔑</div>
       <div class="skill-card-title">Identity & Access</div>
       <div class="skill-tags">
         <span class="tag">Active Directory</span>
@@ -867,7 +906,6 @@
       </div>
     </div>
     <div class="skill-card">
-      <div class="skill-card-icon">💻</div>
       <div class="skill-card-title">Operating Systems</div>
       <div class="skill-tags">
         <span class="tag">Windows 7/10/11</span>
@@ -888,7 +926,7 @@
         <span class="avail-dot"></span>
         Available for remote work
       </div>
-      <h2>Let's work together.</h2>
+      <h2>Let's work<br>together.</h2>
       <p>Open to full-time remote IT support, helpdesk, and service coordination roles. Based in the Philippines, comfortable with AU/US/UK time zones.</p>
       <a href="mailto:reyvern.mahinay@outlook.com" class="btn btn-primary">Send me an email →</a>
     </div>
@@ -907,14 +945,14 @@
           <div class="contact-link-val">+63 993 963 4468</div>
         </div>
       </a>
-      <div class="contact-link" style="cursor:default;">
+      <div class="contact-link">
         <span class="contact-link-icon">📍</span>
         <div>
           <div class="contact-link-label">Location</div>
           <div class="contact-link-val">Bacolod City, Philippines</div>
         </div>
       </div>
-      <div class="contact-link" style="cursor:default;">
+      <div class="contact-link">
         <span class="contact-link-icon">🕐</span>
         <div>
           <div class="contact-link-label">Timezone</div>
@@ -933,11 +971,9 @@
 <script>
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-      }
+      if (e.isIntersecting) e.target.classList.add('visible');
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.08 });
 
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 </script>
