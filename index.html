@@ -4,28 +4,53 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Reyvern Mahinay — IT Support Professional</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #0c0c0c;
     --bg2: #111111;
     --card: #161616;
-    --border: #222222;
-    --accent: #00e5ff;
-    --text: #e0e0e0;
-    --muted: #888888;
-    --dim: #555555;
+    --border: #2a2a2a;
+    --accent: #00c8e0;
+    --text: #f0f0f0;
+    --muted: #b0b0b0;
+    --dim: #787878;
+    --nav-bg: rgba(12,12,12,0.92);
+    --outline-stroke: rgba(240,240,240,0.2);
+    --btn-primary-hover: #fff;
+  }
+
+  html[data-theme="light"] {
+    --bg: #f5f5f0;
+    --bg2: #ebebе6;
+    --card: #e2e2dd;
+    --border: #c8c7c0;
+    --accent: #007090;
+    --text: #111111;
+    --muted: #444444;
+    --dim: #888880;
+    --nav-bg: rgba(245,245,240,0.92);
+    --outline-stroke: rgba(17,17,17,0.2);
+    --btn-primary-hover: #000;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
 
+  /* ── THEME TRANSITION ── */
+  body, nav, .stats-bar, .stat-item, .skill-card, .hobby-card,
+  .info-list li, .contact-link, footer, #experience, #contact,
+  .timeline-item, .tag, .avail-badge, .timeline-badge {
+    transition: background 0.35s ease, color 0.35s ease,
+                border-color 0.35s ease, background-color 0.35s ease;
+  }
+
   body {
     background: var(--bg);
     color: var(--text);
     font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    font-size: 16px;
+    font-weight: 400;
+    font-size: 17px;
     line-height: 1.75;
     overflow-x: hidden;
   }
@@ -44,7 +69,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(12,12,12,0.92);
+    background: var(--nav-bg);
     backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--border);
   }
@@ -65,7 +90,7 @@
 
   .nav-links a {
     font-family: 'Roboto', sans-serif;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 0.78rem;
     color: var(--muted);
     text-decoration: none;
@@ -113,15 +138,15 @@
 
   h1 {
     font-family: 'Roboto', sans-serif;
-    font-size: clamp(5rem, 14vw, 11rem);
-    line-height: 0.88;
-    letter-spacing: 0.02em;
+    font-weight: 900;
+    font-size: clamp(4.5rem, 13vw, 10rem);
+    line-height: 0.9;
+    letter-spacing: -0.03em;
     margin-bottom: 2.5rem;
   }
 
   h1 .outline {
-    color: transparent;
-    -webkit-text-stroke: 1px rgba(224,224,224,0.25);
+    color: var(--accent);
   }
 
   .hero-bottom {
@@ -137,7 +162,7 @@
     color: var(--muted);
     max-width: 440px;
     line-height: 1.8;
-    font-weight: 300;
+    font-weight: 400;
   }
 
   .hero-actions {
@@ -165,7 +190,7 @@
     background: var(--accent);
     color: #000;
   }
-  .btn-primary:hover { background: #fff; }
+  .btn-primary:hover { background: var(--btn-primary-hover); color: #000; }
 
   .btn-ghost {
     border: 1px solid var(--border);
@@ -197,8 +222,8 @@
   }
 
   .stat-label {
-    font-size: 0.72rem;
-    font-weight: 400;
+    font-size: 0.74rem;
+    font-weight: 500;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--muted);
@@ -217,7 +242,7 @@
     font-family: 'Bebas Neue', sans-serif;
     font-size: 0.85rem;
     letter-spacing: 0.15em;
-    color: var(--dim);
+    color: var(--muted);
   }
 
   .section-title {
@@ -261,7 +286,7 @@
     color: var(--muted);
     font-size: 0.95rem;
     margin-bottom: 1.1rem;
-    font-weight: 300;
+    font-weight: 400;
   }
 
   .info-list {
@@ -289,7 +314,7 @@
 
   .info-key {
     font-size: 0.68rem;
-    font-weight: 500;
+    font-weight: 700;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--dim);
@@ -297,9 +322,9 @@
   }
 
   .info-val {
-    font-size: 0.88rem;
+    font-size: 0.9rem;
     color: var(--text);
-    font-weight: 300;
+    font-weight: 400;
   }
 
   /* hobbies */
@@ -330,10 +355,10 @@
   }
 
   .hobby-desc {
-    font-size: 0.84rem;
+    font-size: 0.86rem;
     color: var(--muted);
     line-height: 1.7;
-    font-weight: 300;
+    font-weight: 400;
   }
 
   /* ── EXPERIENCE ── */
@@ -364,8 +389,8 @@
   .timeline-left { padding-top: 0.2rem; }
 
   .timeline-date {
-    font-size: 0.75rem;
-    font-weight: 400;
+    font-size: 0.78rem;
+    font-weight: 500;
     letter-spacing: 0.12em;
     color: var(--muted);
     margin-bottom: 0.5rem;
@@ -373,8 +398,8 @@
 
   .timeline-badge {
     display: inline-block;
-    font-size: 0.65rem;
-    font-weight: 500;
+    font-size: 0.68rem;
+    font-weight: 700;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     padding: 0.2rem 0.6rem;
@@ -392,8 +417,8 @@
   }
 
   .timeline-company {
-    font-size: 0.8rem;
-    font-weight: 400;
+    font-size: 0.82rem;
+    font-weight: 500;
     letter-spacing: 0.1em;
     color: var(--muted);
     text-transform: uppercase;
@@ -408,9 +433,9 @@
   }
 
   .timeline-bullets li {
-    font-size: 0.88rem;
+    font-size: 0.92rem;
     color: var(--muted);
-    font-weight: 300;
+    font-weight: 400;
     padding-left: 1.1rem;
     position: relative;
     line-height: 1.6;
@@ -461,16 +486,16 @@
   }
 
   .tag {
-    font-size: 0.72rem;
-    font-weight: 400;
+    font-size: 0.74rem;
+    font-weight: 500;
     letter-spacing: 0.08em;
     padding: 0.3rem 0.6rem;
     border: 1px solid var(--border);
-    color: var(--dim);
+    color: var(--muted);
     transition: color 0.2s, border-color 0.2s;
   }
 
-  .skill-card:hover .tag { color: var(--muted); border-color: var(--dim); }
+  .skill-card:hover .tag { color: var(--text); border-color: var(--dim); }
 
   /* ── CONTACT ── */
   #contact {
@@ -493,13 +518,14 @@
     align-items: center;
     gap: 0.5rem;
     padding: 0.4rem 0.9rem;
-    border: 1px solid rgba(0,229,255,0.25);
-    font-size: 0.68rem;
-    font-weight: 500;
+    border: 1px solid var(--accent);
+    font-size: 0.7rem;
+    font-weight: 700;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--accent);
     margin-bottom: 1.5rem;
+    opacity: 0.85;
   }
 
   .avail-dot {
@@ -526,8 +552,8 @@
 
   .contact-text p {
     color: var(--muted);
-    font-size: 0.92rem;
-    font-weight: 300;
+    font-size: 0.95rem;
+    font-weight: 400;
     margin-bottom: 2.5rem;
     max-width: 380px;
     line-height: 1.8;
@@ -557,22 +583,22 @@
     font-size: 0.9rem;
     width: 1.5rem;
     text-align: center;
-    opacity: 0.4;
+    opacity: 0.5;
     flex-shrink: 0;
   }
 
   .contact-link-label {
-    font-size: 0.68rem;
-    font-weight: 500;
+    font-size: 0.7rem;
+    font-weight: 700;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--muted);
+    color: var(--dim);
     margin-bottom: 0.15rem;
   }
 
   .contact-link-val {
-    font-size: 0.88rem;
-    font-weight: 300;
+    font-size: 0.92rem;
+    font-weight: 400;
     color: var(--text);
   }
 
@@ -586,10 +612,10 @@
   }
 
   footer p {
-    font-size: 0.72rem;
-    font-weight: 400;
+    font-size: 0.74rem;
+    font-weight: 500;
     letter-spacing: 0.15em;
-    color: var(--dim);
+    color: var(--muted);
     text-transform: uppercase;
   }
 
@@ -600,6 +626,35 @@
     transition: opacity 0.65s ease, transform 0.65s ease;
   }
   .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── THEME TOGGLE ── */
+  .theme-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    cursor: pointer;
+    background: none;
+    border: 1px solid var(--border);
+    padding: 0.45rem 0.9rem;
+    color: var(--muted);
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    transition: color 0.2s, border-color 0.2s;
+    flex-shrink: 0;
+  }
+
+  .theme-toggle:hover { color: var(--text); border-color: var(--dim); }
+
+  .toggle-icon {
+    font-size: 0.85rem;
+    line-height: 1;
+    transition: transform 0.4s ease;
+  }
+
+  html[data-theme="light"] .toggle-icon { transform: rotate(180deg); }
 
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
@@ -637,6 +692,10 @@
     <li><a href="#skills">Skills</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+    <span class="toggle-icon">☀️</span>
+    <span class="toggle-label">Day</span>
+  </button>
 </nav>
 
 <!-- HERO -->
@@ -645,7 +704,8 @@
     <div class="hero-inner">
       <div class="hero-eyebrow">IT Support Professional</div>
       <h1>
-        Reyvern Mahinay 
+        Reyvern<br>
+        <span class="outline">Mahinay</span>
       </h1>
       <div class="hero-bottom">
         <p class="hero-desc">
@@ -968,13 +1028,40 @@
 </footer>
 
 <script>
+  // ── FADE IN ──
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) e.target.classList.add('visible');
     });
   }, { threshold: 0.08 });
-
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // ── THEME TOGGLE ──
+  const toggle = document.getElementById('themeToggle');
+  const icon = toggle.querySelector('.toggle-icon');
+  const label = toggle.querySelector('.toggle-label');
+  const html = document.documentElement;
+
+  // Load saved preference
+  const saved = localStorage.getItem('theme') || 'light';
+  applyTheme(saved);
+
+  toggle.addEventListener('click', () => {
+    const next = html.dataset.theme === 'light' ? 'dark' : 'light';
+    applyTheme(next);
+    localStorage.setItem('theme', next);
+  });
+
+  function applyTheme(theme) {
+    html.dataset.theme = theme;
+    if (theme === 'light') {
+      icon.textContent = '🌙';
+      label.textContent = 'Night';
+    } else {
+      icon.textContent = '☀️';
+      label.textContent = 'Day';
+    }
+  }
 </script>
 
 </body>
