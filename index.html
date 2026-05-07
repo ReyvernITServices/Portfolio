@@ -19,7 +19,7 @@
     --outline-stroke: rgba(240,240,240,0.2);
     --btn-primary-hover: #fff;
   }
-
+ 
   html[data-theme="light"] {
     --bg: #f5f5f0;
     --bg2: #ebebе6;
@@ -33,10 +33,10 @@
     --outline-stroke: rgba(17,17,17,0.2);
     --btn-primary-hover: #000;
   }
-
+ 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
-
+ 
   /* ── THEME TRANSITION ── */
   body, nav, .stats-bar, .stat-item, .skill-card, .hobby-card,
   .info-list li, .contact-link, footer, #experience, #contact,
@@ -44,7 +44,7 @@
     transition: background 0.35s ease, color 0.35s ease,
                 border-color 0.35s ease, background-color 0.35s ease;
   }
-
+ 
   body {
     background: var(--bg);
     color: var(--text);
@@ -54,12 +54,12 @@
     line-height: 1.75;
     overflow-x: hidden;
   }
-
+ 
   /* ── SCROLLBAR ── */
   ::-webkit-scrollbar { width: 4px; }
   ::-webkit-scrollbar-track { background: var(--bg); }
   ::-webkit-scrollbar-thumb { background: var(--border); }
-
+ 
   /* ── NAV ── */
   nav {
     position: fixed;
@@ -73,7 +73,7 @@
     backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--border);
   }
-
+ 
   .nav-logo {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 1.4rem;
@@ -81,13 +81,13 @@
     text-decoration: none;
     letter-spacing: 0.12em;
   }
-
+ 
   .nav-links {
     display: flex;
     gap: 2.5rem;
     list-style: none;
   }
-
+ 
   .nav-links a {
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
@@ -98,12 +98,12 @@
     text-transform: uppercase;
     transition: color 0.2s;
   }
-
+ 
   .nav-links a:hover { color: var(--text); }
-
+ 
   /* ── SECTIONS ── */
   section { position: relative; }
-
+ 
   /* ── HERO ── */
   #hero {
     min-height: 100vh;
@@ -113,9 +113,9 @@
     max-width: 1200px;
     margin: 0 auto;
   }
-
+ 
   .hero-inner { width: 100%; }
-
+ 
   .hero-eyebrow {
     font-size: 0.75rem;
     font-weight: 400;
@@ -127,7 +127,7 @@
     align-items: center;
     gap: 1rem;
   }
-
+ 
   .hero-eyebrow::before {
     content: '';
     width: 2.5rem;
@@ -135,7 +135,7 @@
     background: var(--accent);
     flex-shrink: 0;
   }
-
+ 
   h1 {
     font-family: 'Roboto', sans-serif;
     font-weight: 900;
@@ -144,11 +144,11 @@
     letter-spacing: -0.03em;
     margin-bottom: 2.5rem;
   }
-
+ 
   h1 .outline {
     color: var(--accent);
   }
-
+ 
   .hero-bottom {
     display: flex;
     justify-content: space-between;
@@ -156,7 +156,7 @@
     gap: 2rem;
     flex-wrap: wrap;
   }
-
+ 
   .hero-desc {
     font-size: 1rem;
     color: var(--muted);
@@ -164,14 +164,14 @@
     line-height: 1.8;
     font-weight: 400;
   }
-
+ 
   .hero-actions {
     display: flex;
     gap: 1rem;
     flex-shrink: 0;
     flex-wrap: wrap;
   }
-
+ 
   .btn {
     font-size: 0.72rem;
     font-weight: 500;
@@ -185,19 +185,19 @@
     gap: 0.4rem;
     white-space: nowrap;
   }
-
+ 
   .btn-primary {
     background: var(--accent);
     color: #000;
   }
   .btn-primary:hover { background: var(--btn-primary-hover); color: #000; }
-
+ 
   .btn-ghost {
     border: 1px solid var(--border);
     color: var(--muted);
   }
   .btn-ghost:hover { border-color: var(--dim); color: var(--text); }
-
+ 
   /* ── STATS BAR ── */
   .stats-bar {
     border-top: 1px solid var(--border);
@@ -205,14 +205,14 @@
     display: flex;
     background: var(--bg2);
   }
-
+ 
   .stat-item {
     flex: 1;
     padding: 2rem 4rem;
     border-right: 1px solid var(--border);
   }
   .stat-item:last-child { border-right: none; }
-
+ 
   .stat-num {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 2.8rem;
@@ -220,7 +220,7 @@
     letter-spacing: 0.04em;
     line-height: 1;
   }
-
+ 
   .stat-label {
     font-size: 0.74rem;
     font-weight: 500;
@@ -229,7 +229,7 @@
     color: var(--muted);
     margin-top: 0.4rem;
   }
-
+ 
   /* ── SECTION HEADER ── */
   .section-header {
     display: flex;
@@ -237,14 +237,14 @@
     gap: 1.5rem;
     margin-bottom: 3.5rem;
   }
-
+ 
   .section-num {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 0.85rem;
     letter-spacing: 0.15em;
     color: var(--muted);
   }
-
+ 
   .section-title {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 3rem;
@@ -252,27 +252,27 @@
     color: var(--text);
     line-height: 1;
   }
-
+ 
   .section-line {
     flex: 1;
     height: 1px;
     background: var(--border);
   }
-
+ 
   /* ── ABOUT ── */
   #about {
     padding: 7rem 4rem;
     max-width: 1200px;
     margin: 0 auto;
   }
-
+ 
   .about-grid {
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
     gap: 6rem;
     align-items: start;
   }
-
+ 
   .about-text h2 {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 2rem;
@@ -281,21 +281,21 @@
     margin-bottom: 1.5rem;
     color: var(--text);
   }
-
+ 
   .about-text p {
     color: var(--muted);
     font-size: 0.95rem;
     margin-bottom: 1.1rem;
     font-weight: 400;
   }
-
+ 
   .info-list {
     list-style: none;
     display: flex;
     flex-direction: column;
     gap: 0;
   }
-
+ 
   .info-list li {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -305,13 +305,13 @@
     border-bottom: 1px solid var(--border);
   }
   .info-list li:first-child { border-top: 1px solid var(--border); }
-
+ 
   .info-icon {
     font-size: 0.9rem;
     margin-top: 0.15rem;
     opacity: 0.5;
   }
-
+ 
   .info-key {
     font-size: 0.68rem;
     font-weight: 700;
@@ -320,13 +320,13 @@
     color: var(--dim);
     margin-bottom: 0.2rem;
   }
-
+ 
   .info-val {
     font-size: 0.9rem;
     color: var(--text);
     font-weight: 400;
   }
-
+ 
   /* hobbies */
   .hobbies-row {
     display: grid;
@@ -336,7 +336,7 @@
     background: var(--border);
     border: 1px solid var(--border);
   }
-
+ 
   .hobby-card {
     background: var(--card);
     padding: 1.75rem;
@@ -344,23 +344,23 @@
     flex-direction: column;
     gap: 0.75rem;
   }
-
+ 
   .hobby-icon { font-size: 1.5rem; }
-
+ 
   .hobby-title {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 1.1rem;
     letter-spacing: 0.1em;
     color: var(--text);
   }
-
+ 
   .hobby-desc {
     font-size: 0.86rem;
     color: var(--muted);
     line-height: 1.7;
     font-weight: 400;
   }
-
+ 
   /* ── EXPERIENCE ── */
   #experience {
     background: var(--bg2);
@@ -368,14 +368,14 @@
     border-bottom: 1px solid var(--border);
     padding: 7rem 4rem;
   }
-
+ 
   .exp-inner { max-width: 1200px; margin: 0 auto; }
-
+ 
   .timeline {
     display: flex;
     flex-direction: column;
   }
-
+ 
   .timeline-item {
     display: grid;
     grid-template-columns: 220px 1fr;
@@ -385,9 +385,9 @@
     position: relative;
   }
   .timeline-item:first-child { border-top: 1px solid var(--border); }
-
+ 
   .timeline-left { padding-top: 0.2rem; }
-
+ 
   .timeline-date {
     font-size: 0.78rem;
     font-weight: 500;
@@ -395,7 +395,7 @@
     color: var(--muted);
     margin-bottom: 0.5rem;
   }
-
+ 
   .timeline-badge {
     display: inline-block;
     font-size: 0.68rem;
@@ -407,7 +407,7 @@
     color: var(--accent);
     margin-top: 0.4rem;
   }
-
+ 
   .timeline-title {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 1.6rem;
@@ -415,7 +415,7 @@
     margin-bottom: 0.3rem;
     color: var(--text);
   }
-
+ 
   .timeline-company {
     font-size: 0.82rem;
     font-weight: 500;
@@ -424,14 +424,14 @@
     text-transform: uppercase;
     margin-bottom: 1.2rem;
   }
-
+ 
   .timeline-bullets {
     list-style: none;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
   }
-
+ 
   .timeline-bullets li {
     font-size: 0.92rem;
     color: var(--muted);
@@ -440,7 +440,7 @@
     position: relative;
     line-height: 1.6;
   }
-
+ 
   .timeline-bullets li::before {
     content: '—';
     position: absolute;
@@ -448,14 +448,14 @@
     color: var(--dim);
     font-size: 0.75rem;
   }
-
+ 
   /* ── SKILLS ── */
   #skills {
     padding: 7rem 4rem;
     max-width: 1200px;
     margin: 0 auto;
   }
-
+ 
   .skills-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -463,14 +463,14 @@
     background: var(--border);
     border: 1px solid var(--border);
   }
-
+ 
   .skill-card {
     background: var(--bg);
     padding: 2rem;
     transition: background 0.2s;
   }
   .skill-card:hover { background: var(--card); }
-
+ 
   .skill-card-title {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 1.15rem;
@@ -478,13 +478,13 @@
     margin-bottom: 1.25rem;
     color: var(--text);
   }
-
+ 
   .skill-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 0.35rem;
   }
-
+ 
   .tag {
     font-size: 0.74rem;
     font-weight: 500;
@@ -494,16 +494,16 @@
     color: var(--muted);
     transition: color 0.2s, border-color 0.2s;
   }
-
+ 
   .skill-card:hover .tag { color: var(--text); border-color: var(--dim); }
-
+ 
   /* ── CONTACT ── */
   #contact {
     background: var(--bg2);
     border-top: 1px solid var(--border);
     padding: 7rem 4rem;
   }
-
+ 
   .contact-inner {
     max-width: 1200px;
     margin: 0 auto;
@@ -512,7 +512,7 @@
     gap: 6rem;
     align-items: start;
   }
-
+ 
   .avail-badge {
     display: inline-flex;
     align-items: center;
@@ -527,7 +527,7 @@
     margin-bottom: 1.5rem;
     opacity: 0.85;
   }
-
+ 
   .avail-dot {
     width: 5px;
     height: 5px;
@@ -535,12 +535,12 @@
     border-radius: 50%;
     animation: pulse 2s infinite;
   }
-
+ 
   @keyframes pulse {
     0%, 100% { opacity: 1; }
     50% { opacity: 0.3; }
   }
-
+ 
   .contact-text h2 {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 3.5rem;
@@ -549,7 +549,7 @@
     margin-bottom: 1.25rem;
     color: var(--text);
   }
-
+ 
   .contact-text p {
     color: var(--muted);
     font-size: 0.95rem;
@@ -558,14 +558,14 @@
     max-width: 380px;
     line-height: 1.8;
   }
-
+ 
   .contact-links {
     display: flex;
     flex-direction: column;
     gap: 0;
     border-top: 1px solid var(--border);
   }
-
+ 
   .contact-link {
     display: flex;
     align-items: center;
@@ -576,9 +576,9 @@
     color: var(--text);
     transition: padding-left 0.2s;
   }
-
+ 
   a.contact-link:hover { padding-left: 0.5rem; }
-
+ 
   .contact-link-icon {
     font-size: 0.9rem;
     width: 1.5rem;
@@ -586,7 +586,7 @@
     opacity: 0.5;
     flex-shrink: 0;
   }
-
+ 
   .contact-link-label {
     font-size: 0.7rem;
     font-weight: 700;
@@ -595,13 +595,13 @@
     color: var(--dim);
     margin-bottom: 0.15rem;
   }
-
+ 
   .contact-link-val {
     font-size: 0.92rem;
     font-weight: 400;
     color: var(--text);
   }
-
+ 
   /* ── FOOTER ── */
   footer {
     padding: 1.75rem 4rem;
@@ -610,7 +610,7 @@
     justify-content: space-between;
     align-items: center;
   }
-
+ 
   footer p {
     font-size: 0.74rem;
     font-weight: 500;
@@ -618,7 +618,7 @@
     color: var(--muted);
     text-transform: uppercase;
   }
-
+ 
   /* ── FADE IN ── */
   .fade-in {
     opacity: 0;
@@ -626,7 +626,7 @@
     transition: opacity 0.65s ease, transform 0.65s ease;
   }
   .fade-in.visible { opacity: 1; transform: translateY(0); }
-
+ 
   /* ── THEME TOGGLE ── */
   .theme-toggle {
     display: flex;
@@ -645,17 +645,17 @@
     transition: color 0.2s, border-color 0.2s;
     flex-shrink: 0;
   }
-
+ 
   .theme-toggle:hover { color: var(--text); border-color: var(--dim); }
-
+ 
   .toggle-icon {
     font-size: 0.85rem;
     line-height: 1;
     transition: transform 0.4s ease;
   }
-
+ 
   html[data-theme="light"] .toggle-icon { transform: rotate(180deg); }
-
+ 
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
     nav { padding: 1rem 1.75rem; }
@@ -676,14 +676,14 @@
     .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
     footer { padding: 1.5rem 1.75rem; flex-direction: column; gap: 0.4rem; text-align: center; }
   }
-
+ 
   @media (max-width: 480px) {
     .skills-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
 <body>
-
+ 
 <nav>
   <a href="#hero" class="nav-logo">RM</a>
   <ul class="nav-links">
@@ -697,7 +697,7 @@
     <span class="toggle-label">Day</span>
   </button>
 </nav>
-
+ 
 <!-- HERO -->
 <div style="max-width:1200px;margin:0 auto;">
   <section id="hero">
@@ -719,7 +719,7 @@
     </div>
   </section>
 </div>
-
+ 
 <!-- STATS -->
 <div class="stats-bar">
   <div class="stat-item fade-in">
@@ -735,7 +735,7 @@
     <div class="stat-label">Industries Supported</div>
   </div>
 </div>
-
+ 
 <!-- ABOUT -->
 <section id="about">
   <div class="section-header fade-in">
@@ -743,13 +743,13 @@
     <span class="section-title">About</span>
     <span class="section-line"></span>
   </div>
-
+ 
   <div class="about-grid fade-in">
     <div class="about-text">
       <h2>Reliable IT support, wherever the work happens.</h2>
       <p>I am an IT Support Professional based in Bacolod City, Philippines with over five years of hands-on experience in Tier 1 and Tier 2 helpdesk, endpoint management, and network infrastructure across BPO, real estate, and customer service environments.</p>
       <p>I work well independently, document everything properly, and communicate clearly with both technical and non-technical stakeholders. I am looking for a full-time remote role where I can contribute from day one and grow long term.</p>
-
+ 
       <div class="hobbies-row" style="margin-top:2.5rem;">
         <div class="hobby-card">
           <div class="hobby-icon">🎹</div>
@@ -763,7 +763,7 @@
         </div>
       </div>
     </div>
-
+ 
     <ul class="info-list">
       <li>
         <span class="info-icon">📍</span>
@@ -817,7 +817,7 @@
     </ul>
   </div>
 </section>
-
+ 
 <!-- EXPERIENCE -->
 <section id="experience">
   <div class="exp-inner">
@@ -826,9 +826,9 @@
       <span class="section-title">Experience</span>
       <span class="section-line"></span>
     </div>
-
+ 
     <div class="timeline fade-in">
-
+ 
       <div class="timeline-item">
         <div class="timeline-left">
           <div class="timeline-date">July 2022 — Present</div>
@@ -847,7 +847,7 @@
           </ul>
         </div>
       </div>
-
+ 
       <div class="timeline-item">
         <div class="timeline-left">
           <div class="timeline-date">March 2021 — July 2022</div>
@@ -864,7 +864,7 @@
           </ul>
         </div>
       </div>
-
+ 
       <div class="timeline-item">
         <div class="timeline-left">
           <div class="timeline-date">March 2020 — March 2021</div>
@@ -879,7 +879,7 @@
           </ul>
         </div>
       </div>
-
+ 
       <div class="timeline-item">
         <div class="timeline-left">
           <div class="timeline-date">July 2019 — November 2019</div>
@@ -893,11 +893,11 @@
           </ul>
         </div>
       </div>
-
+ 
     </div>
   </div>
 </section>
-
+ 
 <!-- SKILLS -->
 <section id="skills">
   <div class="section-header fade-in">
@@ -905,7 +905,7 @@
     <span class="section-title">Skills</span>
     <span class="section-line"></span>
   </div>
-
+ 
   <div class="skills-grid fade-in">
     <div class="skill-card">
       <div class="skill-card-title">Endpoint Management</div>
@@ -976,7 +976,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- CONTACT -->
 <section id="contact">
   <div class="contact-inner">
@@ -1021,12 +1021,12 @@
     </div>
   </div>
 </section>
-
+ 
 <footer>
   <p>© 2026 Reyvern P. Mahinay</p>
   <p>Bacolod City, Philippines · reyvern.mahinay@outlook.com</p>
 </footer>
-
+ 
 <script>
   // ── FADE IN ──
   const observer = new IntersectionObserver((entries) => {
@@ -1035,23 +1035,23 @@
     });
   }, { threshold: 0.08 });
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
+ 
   // ── THEME TOGGLE ──
   const toggle = document.getElementById('themeToggle');
   const icon = toggle.querySelector('.toggle-icon');
   const label = toggle.querySelector('.toggle-label');
   const html = document.documentElement;
-
+ 
   // Load saved preference
   const saved = localStorage.getItem('theme') || 'light';
   applyTheme(saved);
-
+ 
   toggle.addEventListener('click', () => {
     const next = html.dataset.theme === 'light' ? 'dark' : 'light';
     applyTheme(next);
     localStorage.setItem('theme', next);
   });
-
+ 
   function applyTheme(theme) {
     html.dataset.theme = theme;
     if (theme === 'light') {
@@ -1063,6 +1063,6 @@
     }
   }
 </script>
-
+ 
 </body>
 </html>
